@@ -1,7 +1,9 @@
 # Sublist3r2
-Porting of Sublist3r subdomain enumeration tool in Rust. Credit to https://github.com/aboul3la/Sublist3r.
+Porting of the Sublist3r subdomain enumeration tool in Rust.
 
-```bash
+Credit to https://github.com/aboul3la/Sublist3r.
+
+```
 ./sublist3r2 --help                      
 Usage: sublist3r2 [OPTIONS] --domain <DOMAIN>
 
@@ -40,7 +42,7 @@ Options:
           Print version
 ```
 
-```bash
+```
 ./sublist3r2 -d snapchat.com -e google,virustotal,baidu -v
 [*] Enumerating subdomains now for snapchat.com
 [*] Searching now in google...
