@@ -1,0 +1,10 @@
+[package]
+name = "sublist3r2"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+base64 = "0.22.1"
+clap = { version = "4.5.23", features = ["derive"] }
+regex = "1.11.1"
+reqwest = { version = "0.12.9", features = ["blocking", "charset", "cookies"] }
