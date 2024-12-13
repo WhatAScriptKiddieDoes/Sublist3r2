@@ -187,7 +187,7 @@ trait BaseEngine: Send {
             subdomains_len = subdomains.len() as u32;
         }
         if self.get_verbose() {
-            println!("[+] Found {} subdomains with {}.",
+            println!("[+] Found {} subdomains with {}",
                 subdomains.len(), self.get_engine_name());
         }
         subdomains
@@ -319,7 +319,7 @@ impl BaseEngine for DnsDumpsterEngine {
             Some(t) => t,
             None => {
                 if self.get_verbose() {
-                    println!("[!] Error while retrieving auth token for {}.",
+                    println!("[!] Error while retrieving auth token for {}",
                         self.get_engine_name());
                 }
                 return subdomains
@@ -330,7 +330,7 @@ impl BaseEngine for DnsDumpsterEngine {
             Ok(auth_header) => auth_header,
             Err(_) => {
                 if self.get_verbose() {
-                    println!("[!] Error while creating auth token header for {}.",
+                    println!("[!] Error while creating auth token header for {}",
                         self.get_engine_name());
                 }
                 return subdomains
@@ -353,7 +353,7 @@ impl BaseEngine for DnsDumpsterEngine {
 
         subdomains.extend(self.extract_domains(&response));
         if self.get_verbose() {
-            println!("[+] Found {} subdomains with {}.",
+            println!("[+] Found {} subdomains with {}",
                 subdomains.len(), self.get_engine_name());
         }
         subdomains
@@ -416,7 +416,7 @@ impl BaseEngine for VirustotalEngine {
         }
 
         if self.get_verbose() {
-            println!("[+] Found {} subdomains with {}.",
+            println!("[+] Found {} subdomains with {}",
                 subdomains.len(), self.get_engine_name());
         }
         subdomains
@@ -574,7 +574,7 @@ fn create_engine(engine_type: &str, search: &str,
                 ),
             })
         },
-        other => panic!("Unknown engine type: {}.", other),
+        other => panic!("Unknown engine type: {}", other),
     }    
 }
 
@@ -587,7 +587,7 @@ fn main() {
     // Check domain format
     let domain_check = Regex::new("(?:[a-z0-9-]+\\.)+[a-z0-9-]{2,}").unwrap();
     if !domain_check.is_match(&args.domain) {
-        panic!("Invalid domain format.");
+        panic!("Invalid domain format");
     }
 
     if args.verbose {
